@@ -4,33 +4,642 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clarks Consulting</title>
+    <link rel="icon" type="image/x-icon" href="/images/FullLogo_NoBuffer.png">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        h1, h2, h3, h4 {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            list-style-position: inside;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        .header {
+            background-image: url("/images/1000017813.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            padding: 2rem;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .header-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .header-left {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .header-left h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .header-left h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #ecf0f1;
+            font-weight: 400;
+        }
+
+        #p1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        #p2 {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 500px;
+        }
+
+        /* Navigation */
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            margin-top: 0px;
+        }
+
+        .nav-menu li a {
+            color: white;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-menu li a:hover {
+            color: #3498db;
+        }
+
+        .nav-menu li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #3498db;
+            transition: width 0.3s;
+        }
+
+        .nav-menu li a:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            background-color: #2c3e50;
+            padding: 2rem;
+            transition: right 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar.active {
+            right: 0;
+        }
+
+        .sidebar-close {
+            align-self: flex-end;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+        }
+
+        .sidebar-menu li {
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-menu li a {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        /* Socials and Button */
+        .socials {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            align-items: center;
+        }
+
+        .socials a {
+            transition: transform 0.3s;
+        }
+
+        .socials a:hover {
+            transform: translateY(-5px);
+        }
+
+        .btn {
+            background-color: #e98b07;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: fit-content;
+        }
+
+        .btn:hover {
+            background-color: #b78b49;
+        }
+
+        /* Experience Section */
+        #experience {
+            background-color: white;
+        }
+
+        .experience-card {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+
+        .experience-card h2 {
+            color: #2c3e50;
+        }
+
+        .experience-card h3 {
+            color: #3498db;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-card p {
+            margin-bottom: 1.5rem;
+            color: #7f8c8d;
+        }
+
+        /* Projects Section */
+        #projects {
+            background-color: #f8f9fa;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .container {
+            padding: 1.5rem;
+        }
+
+        .container h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        /* Testimonials Section */
+        #testimonials {
+            background-color: white;
+        }
+
+        .testimonial-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-size: 4rem;
+            color: #3498db;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            opacity: 0.3;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-card h4 {
+            color: #3498db;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: #f8f9fa;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-left {
+                margin-bottom: 2rem;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+                position: absolute;
+                top: 2rem;
+                right: 2rem;
+            }
+
+            .header-left h1 {
+                font-size: 2.5rem;
+            }
+
+            #p1 {
+                font-size: 1.5rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>David Clark</h1>
-        <h2>Economic Planning Resources Consultant</h2>
-        <p>I create the way to<br>Future innovations</p>
-        <p>Through devoted and diligent work.I can<br>gurantee to do a through analysis on the<br> projects prospects.</p>
-        <nav>
-            <ul>
+    <header class="header" id="home">
+        <div class="header-container">
+            <div class="header-left">
+                <h1>David Clark</h1>
+                <h2>Economic Planning Resources Consultant</h2>
+                <p id="p1">I create the way for<br>Future innovations</p>
+                <p id="p2">Through devoted and diligent work, I can guarantee to do a thorough analysis on the projects prospects.</p>
+                
+                <div class="socials">
+                    <a href="https://www.linkedin.com/in/davidclarkepr/" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="linkedin" style="width: 40px;height: auto;">
+                    </a>
+                    <a href="https://www.facebook.com/share/19s5jy66UH/" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="facebook" style="width: 40px;height: auto;">
+                    </a>
+                    <a href="https://www.instagram.com/cmpared2what?igsh=MWV0MHJhNnF1Y2hraw==" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="instagram" style="width: 40px;height: auto;">
+                    </a>
+                    <a href="https://wa.link/9wo4x5" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="whatsapp" style="width: 40px;height: auto;">
+                    </a>
+                </div>
+                
+                <button class="btn">Get a Quote</button>
+            </div>
+            
+            <div>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div id="mobile-menu" class="mobile-menu">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Sidebar -->
+        <div class="sidebar">
+            <button class="sidebar-close">&times;</button>
+            <ul class="sidebar-menu">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#experiences">Experience</a></li>
-                <li><a href="#packages">Packages</a></li>
-                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-        </nav>
-    </header> 
-    <section id="services">
-        <h2>Our Services</h2>
-        <p>We offer a range of consulting services to help your business thrive.</p>  
-        <ul>
-            <li>Business Strategy</li>
-            <li>Market Analysis</li>
-            <li>Financial Planning</li>
-            <li>Operational Improvement</li>
-        </ul>
+        </div>
+    </header>
+    
+    <section id="experience">
+        <h1>Experience</h1>
+        <div class="experience-card">
+            <h2>Economic Planning Resources Consultant</h2>
+            <h3>Clarks Consulting</h3>
+            <p><strong>Jan 2020 - Present | Bozeman, MT</strong></p>
+            <ul>
+                <li>Conduct economic impact analyses for various projects using IMPLAN software.</li>
+                <li>Develop comprehensive reports and presentations to communicate findings to clients and stakeholders.</li>
+                <li>Collaborate with multidisciplinary teams to integrate economic analysis into broader project planning and decision-making processes.</li>
+                <li>Stay updated on industry trends and best practices in economic planning and analysis.</li>
+            </ul>
+        </div>
+        <!-- Experience Card 2 -->
+          <div class="experience-card">
+            <h2>Economic Planning Resources Consultant</h2>
+            <h3>Clarks Consulting</h3>
+            <p><strong>Jan 2020 - Present | Bozeman, MT</strong></p>
+            <ul>
+                <li>Conduct economic impact analyses for various projects using IMPLAN software.</li>
+                <li>Develop comprehensive reports and presentations to communicate findings to clients and stakeholders.</li>
+                <li>Collaborate with multidisciplinary teams to integrate economic analysis into broader project planning and decision-making processes.</li>
+                <li>Stay updated on industry trends and best practices in economic planning and analysis.</li>
+            </ul>
+        </div>
     </section>
     
+    <section id="projects">
+        <h1>Projects</h1>
+        <div class="card-container">
+            <div class="card">
+                <img src="https://via.placeholder.com/400x250/3498db/ffffff?text=Barren+Ridge+Project" alt="Barren Ridge Renewable Transmission Project">
+                <div class="container">
+                    <h4><b>Barren Ridge Renewable Transmission Project</b></h4> 
+                    <p>Spearheaded baseline and impact analyses for large-scale, 2-state, 26-county project involving installation of over 400 miles of transmission line through southwest Montana and eastern Idaho. Assessed environmental justice impacts using IMPLAN.</p> 
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://via.placeholder.com/400x250/2c3e50/ffffff?text=Yellowstone+to+Yukon" alt="Yellowstone to Yukon Conservation Initiative">
+                <div class="container">
+                    <h4><b>Yellowstone to Yukon Conservation Initiative</b></h4> 
+                    <p>Conducted economic impact analysis of conservation and restoration activities in the Greater Yellowstone Ecosystem using IMPLAN. Analyzed economic contributions of outdoor recreation and tourism in the region.</p> 
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://via.placeholder.com/400x250/e74c3c/ffffff?text=Montana+DOT" alt="Montana Department of Transportation">
+                <div class="container">
+                    <h4><b>Montana Department of Transportation</b></h4> 
+                    <p>Conducted economic impact analyses of transportation projects across Montana using IMPLAN. Projects included highway expansions, bridge replacements, and public transit initiatives.</p> 
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://via.placeholder.com/400x250/27ae60/ffffff?text=City+of+Bozeman" alt="City of Bozeman">
+                <div class="container">
+                    <h4><b>City of Bozeman</b></h4> 
+                    <p>Performed economic impact analyses for various city projects, including downtown revitalization efforts and public infrastructure improvements. Utilized IMPLAN to assess job creation and economic growth potential.</p> 
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="testimonials">
+        <h1>Testimonials</h1>
+        <div class="testimonial-container">
+            <div class="testimonial-card">
+                <p>"David's expertise in economic planning was instrumental in the success of our project. His thorough analysis and attention to detail provided us with the insights we needed to move forward confidently."</p>
+                <h4>- Jane Smith, Project Manager</h4>
+            </div>
+            
+            <div class="testimonial-card">
+                <p>"Working with David was a pleasure. His dedication and professionalism were evident throughout the entire process. I highly recommend his consulting services."</p>
+                <h4>- John Doe, CEO</h4>
+            </div>
+            
+            <div class="testimonial-card">
+                <p>"David's ability to analyze complex economic data and present it in a clear and actionable manner was invaluable. He exceeded our expectations in every way."</p>
+                <h4>- Emily Johnson, Director of Operations</h4>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h1>Contact Me</h1>
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <!-- Replace with your Access Key -->
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+
+            <!-- Form Inputs. Each input must have a name="" attribute -->
+            <label for="name">Name:</label>
+            <input type="text" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" name="email" required>
+            
+            <label for="phone">Phone Number:</label>
+            <input type="tel" name="phone" required>
+            
+            <label for="message">Message:</label>
+            <textarea name="message" required></textarea>
+
+            <!-- Honeypot Spam Protection -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+            <!-- Custom Confirmation / Success Page -->
+            <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
+
+            <button type="submit" class="btn">Submit Form</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Clarks Consulting. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // Mobile menu functionality
+        const hamburger = document.querySelector('.hamburger');
+        const sidebar = document.querySelector('.sidebar');
+        const sidebarClose = document.querySelector('.sidebar-close');
+        
+        hamburger.addEventListener('click', () => {
+            sidebar.classList.add('active');
+        });
+        
+        sidebarClose.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+        });
+        
+        // Close sidebar when clicking on a link
+        const sidebarLinks = document.querySelectorAll('.sidebar-menu a');
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                sidebar.classList.remove('active');
+            });
+        });
+        
+        // Get Quote button functionality
+        const quoteBtn = document.querySelector('.btn');
+        quoteBtn.addEventListener('click', () => {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // Form submission
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            // Add your form submission logic here
+            // For now, we'll just prevent default and show an alert
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            form.reset();
+        });
+    </script>
 </body>
 </html>
