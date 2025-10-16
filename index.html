@@ -113,11 +113,21 @@
         }
 
         /* Navigation */
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(44, 62, 80, 0.95);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
         .nav-menu {
             display: flex;
             list-style: none;
             gap: 2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 29em;
             margin-top: 0px;
         }
 
@@ -261,6 +271,18 @@
             margin-bottom: 1.5rem;
             color: #7f8c8d;
         }
+        .expbtn {
+            background-color: #e98b07;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: fit-content;
+            margin-top: 2rem;
+        }
 
         /* Projects Section */
         #projects {
@@ -393,7 +415,7 @@
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
-                text-align: center;
+                align-items: flex-start;
             }
 
             .header-left {
@@ -421,6 +443,9 @@
 
             section {
                 padding: 3rem 1rem;
+            }
+            .nav-container {
+                padding: 1rem;
             }
         }
     </style>
@@ -489,35 +514,97 @@
     <section id="experience">
         <h1>Experience</h1>
         <div class="experience-card">
-            <h2>Economic Planning Resources Consultant</h2>
-            <h3>Clarks Consulting</h3>
-            <p><strong>Jan 2020 - Present | Bozeman, MT</strong></p>
+            <h2>Principal Economist</h2>
+            <h3>Self-Employed</h3>
+            <p><strong>Aug 2022 - Present | Northwest USA</strong></p>
             <ul>
-                <li>Conduct economic impact analyses for various projects using IMPLAN software.</li>
-                <li>Develop comprehensive reports and presentations to communicate findings to clients and stakeholders.</li>
-                <li>Collaborate with multidisciplinary teams to integrate economic analysis into broader project planning and decision-making processes.</li>
-                <li>Stay updated on industry trends and best practices in economic planning and analysis.</li>
+                <li>Financial, fiscal, and economic analysis, modeling, forecasting, predictive analytics.</li>
+                <li>Financial program planning, policy development and evaluation, impact assessment.</li>
+                <li>Pricing structure development, market analysis, urban and infrastructure planning.</li>
+                <li>Environmental policy and planning, project management, contract and consultant management.</li>
             </ul>
         </div>
         <!-- Experience Card 2 -->
           <div class="experience-card">
-            <h2>Economic Planning Resources Consultant</h2>
-            <h3>Clarks Consulting</h3>
-            <p><strong>Jan 2020 - Present | Bozeman, MT</strong></p>
+            <h2>Senior Economist</h2>
+            <h3>King County (WA) Wastewater Treatment Division · Full-time</h3>
+            <p><strong>April 2016-july2022.6yrs 4 months</strong></p>
             <ul>
-                <li>Conduct economic impact analyses for various projects using IMPLAN software.</li>
-                <li>Develop comprehensive reports and presentations to communicate findings to clients and stakeholders.</li>
-                <li>Collaborate with multidisciplinary teams to integrate economic analysis into broader project planning and decision-making processes.</li>
-                <li>Stay updated on industry trends and best practices in economic planning and analysis.</li>
+                <li>Conducted a variety of economic and financial evaluations of existing and proposed programs and projects.</li>
+                <li>Built and updated demand forecasting models for Treatment and interceptor services.</li>
+                <li>Built financial model to determine pricing for Division pricing of septage services.</li>
+                <li> Revised financial lifecycle models for satellite collection and treatment systems in Carnation and Vashon Island, WA.</li>
+                <li>Technical advisor for groundbreaking Study of multigenerational economic impacts of racial inequities in a variety of historical real estate practices.</li>
             </ul>
         </div>
+         <!-- Experience Card 3 -->
+          <div class="experience-card">
+            <h2>Deputy Manager | Planner Economist Environmental Manager</h2>
+            <h3>Louis Berger group· Full-time</h3>
+            <p><strong> 2013-2016.3 yrs</strong></p>
+            <ul>
+                <li>Land Use and Infrastructure Planning, Environmental Planning, Socioeconomic impact assessment consulting.</li>
+                <li>Tracking Industry Trends and Innovations in Technology, Market Structure, Big Data.</li>
+                <li>Attending Networking Events, Researching Industry Leaders</li>
+                <li>Participating in Industry Discussions,Consulted across diverse industries including energy, infrastructure, environment, government, and commercial development.</li>
+            </ul>
+        </div>
+         <!-- Experience Card 4 -->
+          <div class="experience-card">
+            <h2>Principal Planner Economist Environmental Manager</h2>
+            <h3>USA,territories,international· Full-time</h3>
+            <p><strong>july 1995.</strong></p>
+            <ul>
+                <li>City / regional planning, environmental planning / permitting, economics, database, models, feasibility and socioeconomic impacts, and formulating strategies and plans.</li>
+                <li>Analytic director, managing projects and clients for international, national, and regional clients both public and private.</li>
+                <li>provided expert consulting in economic analysis, policy development, urban and environmental planning, and project management across the U.S. and internationally.</li>
+                <li>Led major projects involving fiscal impact assessments, infrastructure planning, renewable energy, and socioeconomic studies for government and private sectors.</li>
+            </ul>
+        </div>
+         <!-- Experience Card 5 -->
+          <div class="experience-card">
+            <h2>Assistant Director | Senior Economist Planner Environmental Economics Analysis</h2>
+            <h3>Washington Dept of Ecology · Full-time</h3>
+            <p><strong>1990-1991-1yr</strong></p>
+            <ul>
+                <li>Economic analysis of the proposed new statewide air quality management program.</li>
+                <li>Project coordination, statewide clean water program, for cost estimating, and designing policies and programs for the Centennial Clean Water Act program.</li>
+                <li> 30 state water specialists in identifying, costing, and prioritizing about 2500 water quality protection programs and projects.</li>
+                <li>Coordinated statewide citizens' advisory committee to develop prioritizing criteria.</li>
+            </ul>
+        </div>
+         <!-- Experience Card 6 -->
+          <div class="experience-card">
+            <h2>Research Associate - Economist and Planner</h2>
+            <h3>Batelle</h3>
+            <p><strong>feb 1987-Dec 1990.3yrs 11 months</strong></p>
+            <ul>
+                <li>Marketing, project management, and Principal Investigator for the Human Affairs Research Centers, Environmental Planning and Social Research Center.</li>
+                <li>I led projects in city/regional land use, transportation and other infrastructure planning and research, economics, socioeconomic impact, environmental planning, resource economics, economic modeling and forecasting.</li>
+                <li>Resource valuation, major power plant impacts, hazardous waste disposal impacts, Puget Sound Regional Council VISION 2020 Regional Land Use and Transportation Plan and EIS.</li>
+                <li>Clients included DOE, EPA, Wright Davis, & Tremaine, and the Puget Sound Regional Council.</li>
+            </ul>
+        </div>
+         <!-- Experience Card 7 -->
+          <div class="experience-card">
+            <h2>Senior Planner Economist</h2>
+            <h3>Dames and Moore.cincinnati,Denver,seattle,California</h3>
+            <p><strong>1977-1984.7yrs</strong></p>
+            <ul>
+                <li>Consultant in environmental planning and permitting, city and regional planning, sewage collection and treatment analysis.</li>
+                <li>Water supply, transportation, recreation, resource economics, fiscal analysis, socioeconomic modeling and impact.</li>
+                <li>Economic development policy, port development, and economic feasibility for retail, commercial, industrial, mining projects.</li>
+                <li>SEPA and NEPA, 404 permits, Endangered Species, Historic Places. </li>
+            </ul>
+        </div>
+        <button class="expbtn"><a href="https://www.linkedin.com/in/davidclarkepr/details/experience/">View More</a></button>
     </section>
     
     <section id="projects">
         <h1>Projects</h1>
         <div class="card-container">
             <div class="card">
-                <img src="https://via.placeholder.com/400x250/3498db/ffffff?text=Barren+Ridge+Project" alt="Barren Ridge Renewable Transmission Project">
+                <img src="/images/WhatsApp Image 2025-10-11 at 12.05.47_9ae29efe.jpg" alt="Barren Ridge Renewable Transmission Project">
                 <div class="container">
                     <h4><b>Barren Ridge Renewable Transmission Project</b></h4> 
                     <p>Spearheaded baseline and impact analyses for large-scale, 2-state, 26-county project involving installation of over 400 miles of transmission line through southwest Montana and eastern Idaho. Assessed environmental justice impacts using IMPLAN.</p> 
@@ -525,7 +612,7 @@
             </div>
             
             <div class="card">
-                <img src="https://via.placeholder.com/400x250/2c3e50/ffffff?text=Yellowstone+to+Yukon" alt="Yellowstone to Yukon Conservation Initiative">
+                <img src="/images/WhatsApp Image 2025-10-11 at 12.05.47_7eda946c.jpg" alt="Yellowstone to Yukon Conservation Initiative">
                 <div class="container">
                     <h4><b>Yellowstone to Yukon Conservation Initiative</b></h4> 
                     <p>Conducted economic impact analysis of conservation and restoration activities in the Greater Yellowstone Ecosystem using IMPLAN. Analyzed economic contributions of outdoor recreation and tourism in the region.</p> 
@@ -533,7 +620,7 @@
             </div>
             
             <div class="card">
-                <img src="https://via.placeholder.com/400x250/e74c3c/ffffff?text=Montana+DOT" alt="Montana Department of Transportation">
+                <img src="/images/WhatsApp Image 2025-10-11 at 12.05.47_7eda946c.jpg" alt="Montana Department of Transportation">
                 <div class="container">
                     <h4><b>Montana Department of Transportation</b></h4> 
                     <p>Conducted economic impact analyses of transportation projects across Montana using IMPLAN. Projects included highway expansions, bridge replacements, and public transit initiatives.</p> 
@@ -541,7 +628,7 @@
             </div>
             
             <div class="card">
-                <img src="https://via.placeholder.com/400x250/27ae60/ffffff?text=City+of+Bozeman" alt="City of Bozeman">
+                <img src="/images/WhatsApp Image 2025-10-11 at 12.05.47_7eda946c.jpg" alt="City of Bozeman">
                 <div class="container">
                     <h4><b>City of Bozeman</b></h4> 
                     <p>Performed economic impact analyses for various city projects, including downtown revitalization efforts and public infrastructure improvements. Utilized IMPLAN to assess job creation and economic growth potential.</p> 
